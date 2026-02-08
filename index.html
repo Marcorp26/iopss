@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 2nd Anniversary ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #fde2e4, #f9f7f7);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ===== OPENING SCREEN ===== */
+    .opening {
+      position: fixed;
+      inset: 0;
+      background: #fde2e4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      animation: fadeOut 2s ease forwards;
+      animation-delay: 2.5s;
+    }
+
+    .opening img {
+      width: 140px;
+      border-radius: 50%;
+      animation: zoomFade 2s ease;
+    }
+
+    @keyframes zoomFade {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #b5838d;
+      animation: fadeUp 1.2s ease;
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #6d6875;
+      animation: fadeUp 1.6s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SECTION ===== */
+    section {
+      padding: 80px 10%;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #b5838d;
+      text-align: center;
+    }
+
+    /* ===== STORY CARD ===== */
+    .story-card {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: 0.8s ease;
+    }
+
+    .story-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .story-card img {
+      width: 100%;
+      max-width: 400px;
+      object-fit: cover;
+    }
+
+    .story-text {
+      padding: 40px;
+      flex: 1;
+    }
+
+    .story-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #b5838d;
+    }
+
+    .story-text p {
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.4s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      background: #fde2e4;
+      color: #6d6875;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    @media(max-width: 768px) {
+      header h1 { font-size: 2.3rem; }
+      .story-card { flex-direction: column; }
+      .story-card img { max-width: 100%; }
+    }
+    .long-story {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #555;
+  background: rgba(255,255,255,0.7);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.long-story.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- OPENING -->
+  <div class="opening">
+    <!-- GANTI FOTO / LOGO DI SINI -->
+    <img src="img/alfatihah.jpg" alt="Opening Photo">
+  </div>
+
+  <!-- HERO -->
+  <header>
+    <div>
+      <h1>Happy 2nd Anniversary 💕</h1>
+      <p>Terima kasih sudah berjalan sejauh ini sama aku...</p>
+    </div>
+  </header>
+
+  <!-- STORY -->
+  <section>
+    <h2 class="section-title">Cerita Kita</h2>
+
+    <div class="story-card reveal">
+      <!-- FOTO CARD -->
+      <img src="img/sak.gif" alt="Story Photo">
+
+      <!-- TEKS NYATU DALAM CARD -->
+      <div class="story-text">
+        <h3>Dua Tahun Bersama</h3>
+        <p>
+          Dua tahun bareng itu ternyata bukan waktu yang sebentar. Kita udah ngelewatin banyak hal — dari obrolan receh, ngambek tanpa alasan, sampai ketawa cuma gara-gara hal kecil. Kadang kita keras kepala, kadang saling diem, tapi ujung-ujungnya tetep saling nyari.
+          Lucunya, kita sering debat siapa yang paling sayang. Padahal jawabannya sederhana: kita sama-sama bertahan sampai dua tahun ini. Dan seriusnya… di antara semua orang yang datang dan pergi, <b>kamu masih jadi orang yang selalu aku pilih.</b>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERITA PANJANG DI BAWAH CARD -->
+<div class="long-story reveal">
+  <p>
+    Hari ini 2 tahun kita bareng. Kalau dipikir-pikir, 2 tahun itu bukan waktu yang sebentar. 
+    Kita udah sama-sama lihat versi terbaik, versi terburuk, versi ngambek, versi capek, sampai versi "yaudahlah besok aja dibahas" satu sama lain.
+    <br><br>
+    Terima kasih karena kamu masih di sini. Karena jujur, hubungan itu bukan cuma soal cocok, tapi soal memilih tetap tinggal. 
+    Dan selama 2 tahun ini, kita berkali-kali punya alasan buat nyerah... tapi kita juga berkali-kali milih buat bertahan.
+    <br><br>
+    Aku sadar aku bukan orang yang paling romantis. Kadang aku lebih sering bikin kamu kesel daripada bikin kamu ketawa. Kadang jawabanku pendek, kadang cuek, kadang keras kepala... 
+    tapi di balik itu, kamu tetap orang yang paling aku prioritasin, walaupun seringnya aku tunjukinnya dengan cara yang tidak profesional sebagai pacar.
+    <br><br>
+    Kamu itu udah jadi bagian dari rutinitasku. Hal kecil kayak cerita hari kamu, nanya kamu lagi makan apa, atau cuma lihat notif dari kamu
+     - itu udah cukup buat ngerubah mood satu hari penuh. Aneh sih, satu orang bisa punya pengaruh sebesar itu.
+    <br><br>
+    Kita juga udah banyak belajar. Belajar minta maaf walau gengsi, belajar ngertiin walau lagi emosi, 
+    belajar diem dulu biar nggak ngomong hal yang nanti disesali (walaupun kadang masih gagal dan akhirnya debat juga).
+    <br><br>
+    Aku nggak janji hubungan kita bakal selalu gampang. Kita pasti masih bakal berantem lagi, salah paham lagi, ngambek lagi - karena ya kita manusia. 
+    Tapi aku janji satu hal: 
+    <b>selama kamu masih mau bertahan, aku juga tetap di sini.</b>
+    <br><br>
+    Happy 2nd anniversary. Makasih sudah nemenin aku sampai sejauh ini, makasih sudah sabar, dan makasih sudah tetap milih aku setiap hari. 
+    Semoga kita bukan cuma kuat pas lagi senang, tapi juga tetap saling pegang pas lagi susah.
+    <br><br>
+    Dan semoga kamu masih tahan sama aku… minimal nambah 2 tahun lagi dulu, nanti kita perpanjang kontraknya lagi. 
+    <b>“Makasih.”</b>
+  </p>
+</div>
+
+  <!-- GALLERY -->
+  <section>
+    <h2 class="section-title">Kenangan Kita</h2>
+
+    <div class="gallery">
+      <!-- GANTI FOTO-FOTO DI BAWAH -->
+      <img src="img/1.jpeg">
+      <img src="img/2.jpeg">
+      <img src="img/3.jpeg">
+      <img src="img/4.jpeg">
+      <!-- boleh tambah sampai 6 -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Dengan cinta, dari aku untuk kamu 🤍</p>
+  </footer>
+
+  <script>
+    /* SCROLL ANIMATION */
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 100) {
+          el.classList.add('show');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
